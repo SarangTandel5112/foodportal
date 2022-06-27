@@ -9,6 +9,11 @@ const userSchema = new Schema<userInterface>({
     item: {
         type: String,
         required: true
+    },
+    completed:{
+        type:Boolean,
+        required:true,
+        default:false
     }
 },{timestamps:true})
 

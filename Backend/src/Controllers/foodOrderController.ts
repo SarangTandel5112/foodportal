@@ -19,6 +19,16 @@ public orderFood = async (req:Request,res:Response)=>{
     
 
 };
+public comepleteOrder = async (req:Request , res:Response) =>{
+    const orderId = req.params.orderId.trim();
+    await FoodOrders.findByIdAndUpdate(orderId,{$set:{completed:true}});
+    return res.status(200).json({status:true,data:"Order Completed Successfully"});
+};
+
+public getActiveorders = async (req:Request , res:Response)=>{
+    const orders = await FoodOrders.find({completed:false});
+    return res.status(200).json({status:true,data:orders})
+}
 
 
    

@@ -11,7 +11,7 @@ class FeedBackRouter {
   private routes() {
     this.router
       .route("/")
-      .get(feedback.collectFeedback);
+      .post(feedback.collectFeedback);
   }
 }
 export default FeedBackRouter;

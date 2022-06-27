@@ -11,7 +11,7 @@ class FoodOrderRoutes {
   private routes() {
     this.router
       .route("/")
-      .get(food.orderFood);
+      .post(food.orderFood);
   }
 }
 export default FoodOrderRoutes;
