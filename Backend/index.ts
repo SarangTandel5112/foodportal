@@ -1,1 +1,4 @@
-import express from "express";
+import App from "./src/app";
+
+
+new App();
