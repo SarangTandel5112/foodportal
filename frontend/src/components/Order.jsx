@@ -38,8 +38,8 @@ function Order() {
                         <label>Password</label>
                     </div> */}
                     <div className='row1'>
-                        <button className='itembtn' type='button' name='item' value="item1" onClick={handelChange}>
-                            <a>
+                        <button className='itembtn' name='item' value="item1" onClick={handelChange}>
+                            <a href="#">
                                 <span></span>
                                 <span></span>
                                 <span></span>

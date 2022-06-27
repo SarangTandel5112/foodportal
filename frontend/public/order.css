@@ -179,6 +179,13 @@ html {
     padding: 5% 5%;
     }
 
+    a:focus{
+        background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s;
+    border-radius: 5px;
+    }
+
     .row1,.row2{
         text-align: center;
     }
