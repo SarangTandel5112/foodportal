@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import axios from "axios"
 
 function Order() {
 
@@ -9,12 +10,18 @@ function Order() {
     })
 
     function handelChange(event) {
-        event.preventDefault();
-        alert(event.target.value);
-        setdata({ ...data, [event.target.name]: event.target.value })
+        event.preventDefault()
+        // alert(event.target.value);
+        setdata({ ...data, [event.currentTarget.name]: event.currentTarget.value })
     }
-    function submitData() {
+    async function submitData() {
         console.log(data);
+        const res = await axios.post("/api/foodorder", data)
+        console.log(res);
+        setdata({
+            name: "",
+            item: ""
+        })
     }
 
     return (
@@ -31,8 +38,8 @@ function Order() {
                         <label>Password</label>
                     </div> */}
                     <div className='row1'>
-                        <button className='itembtn' type='button' name='item' value="item1" onChange={handelChange}>
-                            <a href="#">
+                        <button className='itembtn' type='button' name='item' value="item1" onClick={handelChange}>
+                            <a>
                                 <span></span>
                                 <span></span>
                                 <span></span>
@@ -40,7 +47,7 @@ function Order() {
                                 Item1
                             </a>
                         </button>
-                        <button className='itembtn' name='item' value="item2" onChange={handelChange}>
+                        <button className='itembtn' name='item' value="item2" onClick={handelChange}>
                             <a href="#">
                                 <span></span>
                                 <span></span>
@@ -52,7 +59,7 @@ function Order() {
                     </div>
                     <br></br>
                     <div className='row2'>
-                        <button className='itembtn' name='item' value="item3" onChange={handelChange}>
+                        <button className='itembtn' name='item' value="item3" onClick={handelChange}>
                             <a href="#">
                                 <span></span>
                                 <span></span>
@@ -61,7 +68,7 @@ function Order() {
                                 Item3
                             </a>
                         </button>
-                        <button className='itembtn' name='item' value="item4" onChange={handelChange}>
+                        <button className='itembtn' name='item' value="item4" onClick={handelChange}>
                             <a href="#">
                                 <span></span>
                                 <span></span>
