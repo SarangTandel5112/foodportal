@@ -1,9 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
 import axios from "axios"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+
+// toast.configure()
 function Order() {
-
     const [data, setdata] = useState({
         name: "",
         item: ""
@@ -22,10 +25,32 @@ function Order() {
             name: "",
             item: ""
         })
+        if(res.status)
+        toast.success(`Order Placed Successfully`, {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     }
 
     return (
         <div>
+            <ToastContainer
+                // toastStyle={{ color: "#03e9f4" }}
+                position="top-center"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
             <div class="login-box">
                 <h2>Welcome Foodies</h2>
                 <form>
