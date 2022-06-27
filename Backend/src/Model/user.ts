@@ -10,8 +10,8 @@ const userSchema = new Schema<userInterface>({
         type: String,
         required: true
     }
-})
+},{timestamps:true})
 
-const User = model<userInterface>("User", userSchema)
+const FoodOrder = model<userInterface>("Order", userSchema)
 
-export default User;
+export default FoodOrder;

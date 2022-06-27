@@ -1,6 +1,7 @@
-import mongoose, { Types } from "mongoose"
+import mongoose  from "mongoose"
 
 interface feedbackInterface extends mongoose.Document {
+    name:String
     rating: Number,
     feedback: String
 }
