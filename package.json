@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"cd ./Backend && nodemon index.ts\" \"cd ./frontend && npm run start\""
+
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/SarangTandel5112/foodportal/issues"
   },
-  "homepage": "https://github.com/SarangTandel5112/foodportal#readme"
+  "homepage": "https://github.com/SarangTandel5112/foodportal#readme",
+  "dependencies": {
+    "concurrently": "^7.2.2"
+  }
 }
