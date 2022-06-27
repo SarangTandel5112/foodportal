@@ -1,0 +1,19 @@
+{
+  "name": "food_portal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SarangTandel5112/foodportal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SarangTandel5112/foodportal/issues"
+  },
+  "homepage": "https://github.com/SarangTandel5112/foodportal#readme"
+}
