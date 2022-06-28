@@ -1,5 +1,5 @@
 html {
-    height: 160vh;
+    height: 190vh;
   }
   body {
     margin:0;
@@ -7,10 +7,12 @@ html {
     font-family: sans-serif;
     background: linear-gradient(#141e30, #243b55);
   }
+
+  
   
   .login-box {
     position: absolute;
-    top: 50%;
+    top: 80%;
     left: 50%;
     width: 400px;
     padding: 40px;
@@ -19,6 +21,10 @@ html {
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
+  }
+
+  #maindiv .login-box{
+    top: 60%;
   }
   
   .login-box h2 {
