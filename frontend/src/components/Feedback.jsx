@@ -81,11 +81,11 @@ function Feedback() {
                                 </div>
                             </div>
                             <div class="stars">
-                                <label for="star-1" class="star-1 fas fa-star"></label>
-                                <label for="star-2" class="star-2 fas fa-star"></label>
-                                <label for="star-3" class="star-3 fas fa-star"></label>
-                                <label for="star-4" class="star-4 fas fa-star"></label>
-                                <label for="star-5" class="star-5 fas fa-star"></label>
+                                <label htmlFor="star-1" class="star-1 fas fa-star"></label>
+                                <label htmlFor="star-2" class="star-2 fas fa-star"></label>
+                                <label htmlFor="star-3" class="star-3 fas fa-star"></label>
+                                <label htmlFor="star-4" class="star-4 fas fa-star"></label>
+                                <label htmlFor="star-5" class="star-5 fas fa-star"></label>
                             </div>
                         </div>
                         <div class="footer">
