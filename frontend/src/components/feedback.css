@@ -146,7 +146,7 @@
 #star-5:checked ~ .footer .numb::before{
   content: "5 out of 5";
 }
-input[type="radio"]{
+.maindiv input[type="radio"]{
   display: none;
 }
 

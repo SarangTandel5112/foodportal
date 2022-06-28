@@ -3,6 +3,7 @@ import { useState } from 'react'
 import axios from "axios"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./feedback.css"
 
 
 // toast.configure()
@@ -35,7 +36,7 @@ function Feedback() {
     }
 
     return (
-        <div>
+        <div className='maindiv'>
             <ToastContainer
                 // toastStyle={{ color: "#03e9f4" }}
                 position="top-center"

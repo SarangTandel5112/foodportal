@@ -3,7 +3,7 @@ import { useState } from 'react'
 import axios from "axios"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import "./order.css"
 
 // toast.configure()
 function Order() {
@@ -19,9 +19,9 @@ function Order() {
     }
     async function submitData() {
         const res = await axios.post("/api/foodorder", data)
-       
-        
-        if(res.status === 201){
+
+
+        if (res.status === 201) {
             toast.success(`${res.data.data}`, {
                 position: "top-center",
                 autoClose: 3000,
@@ -32,7 +32,7 @@ function Order() {
                 progress: undefined,
             });
 
-        }else{
+        } else {
             toast.error(`${res.data.data}`, {
                 position: "top-center",
                 autoClose: 3000,
@@ -48,8 +48,7 @@ function Order() {
             name: "",
             item: ""
         })
-        
-       
+
     }
 
     return (
@@ -73,6 +72,12 @@ function Order() {
                         <input type="text" name="name" required="" value={data.name} onChange={handelChange} />
                         <label>Foodie's Name :</label>
                     </div>
+                    {/* <div class="user-box">
+                        <input type="radio" name="name" required="" onChange={handelChange} />
+                        <label>Yes</label>
+                        <input type="radio" name="name" required="" onChange={handelChange} />
+                        <label>Want Food On Table ? </label>
+                    </div> */}
                     {/* <div class="user-box">
                         <input type="password" name="" required="" />
                         <label>Password</label>
