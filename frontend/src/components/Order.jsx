@@ -9,8 +9,11 @@ import "./order.css"
 function Order() {
     const [data, setdata] = useState({
         name: "",
-        item: ""
+        item: "",
+        table: "",
+        tableNo: ""
     })
+    const [table, settable] = useState(false)
 
     function handelChange(event) {
         event.preventDefault()
@@ -20,40 +23,59 @@ function Order() {
 
     function handleRadiobtn(event) {
         setdata({ ...data, [event.currentTarget.name]: event.currentTarget.value });
-
+        // alert(event.target.value)
+        if (event.target.value == "yes") {
+            settable(true)
+        }
+        else if (event.target.value == "no") {
+            // alert("no")
+            settable(false)
+        }
     }
 
-    async function submitData() {
-        const res = await axios.post("/api/foodorder", data)
+    async function submitData(event) {
+        // const res = await axios.post("/api/foodorder", data)
+        console.log(data);
 
+        // if (res.status === 201) {
+        //     toast.success(`${res.data.data}`, {
+        //         position: "top-center",
+        //         autoClose: 3000,
+        //         hideProgressBar: false,
+        //         closeOnClick: true,
+        //         pauseOnHover: true,
+        //         draggable: true,
+        //         progress: undefined,
+        //     });
 
-        if (res.status === 201) {
-            toast.success(`${res.data.data}`, {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
+        // } else {
+        //     toast.error(`${res.data.data}`, {
+        //         position: "top-center",
+        //         autoClose: 3000,
+        //         hideProgressBar: false,
+        //         closeOnClick: true,
+        //         pauseOnHover: true,
+        //         draggable: true,
+        //         progress: undefined,
+        //     });
 
-        } else {
-            toast.error(`${res.data.data}`, {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-
-        }
+        // }
+        settable(false)
+        var yesradioButton = document.getElementById('yesfood')
+        var noradioButton = document.getElementById('nofood')
+        yesradioButton.checked = false;
+        noradioButton.checked = false;
+        event.target.blur();
+        // var submitBtn = document.getElementById('submitBtn');
+        // submitBtn.focus = false;
         setdata({
             name: "",
-            item: ""
+            email: "",
+            item: "",
+            table: "",
+            tableNo: ""
         })
+
 
     }
 
@@ -78,18 +100,26 @@ function Order() {
                         <input type="text" name="name" required="" value={data.name} onChange={handelChange} />
                         <label>Foodie's Name :</label>
                     </div>
+                    <div class="user-box">
+                        <input type="text" name="email" required="" value={data.email} onChange={handelChange} />
+                        <label>Foodie's Email :</label>
+                    </div>
                     <div class="user-box1">
                         <label>Want Food On Table ? </label>
                         <br></br>
-                        <input type="radio" className='foodtable' id="1" name="food" onChange={handleRadiobtn} />
-                        <label className='label1 foodtable' htmlFor="1" >Yes</label>
-                        <input type="radio" className='foodtable  foodtable' id="2" name="food" required="" onChange={handleRadiobtn} />
-                        <label className='label1' htmlFor="2">No</label>
+                        <input type="radio" className='foodtable' id='yesfood' value="yes" name="table" onChange={handleRadiobtn} />
+                        <label className='label1 foodtable' htmlFor="yesfood" >Yes</label>
+                        <input type="radio" className='foodtable  foodtable' id='nofood' value="no" name="table" required="" onChange={handleRadiobtn} />
+                        <label className='label1' htmlFor="nofood">No</label>
                     </div>
-                    <div class="user-box">
-                        <input type="text" name="tableno" required="" onChange={handelChange} />
-                        <label>Foodie's Name :</label>
-                    </div>
+
+                    {table === true ? <div class="user-box">
+                        <input type="text" name="tableNo" value={data.tableNo} onChange={handelChange} />
+                        <label>Enter Your Table Number :</label>
+                    </div> : <div></div>}
+
+
+
                     {/* <div class="user-box">
                         <input type="password" name="" required="" />
                         <label>Password</label>
@@ -135,7 +165,7 @@ function Order() {
                             </a>
                         </button>
                     </div>
-                    <div className='submitbtn' onClick={submitData}>
+                    <div className='submitbtn' id='submitBtn' onClick={submitData}>
                         <a href="#">
                             <span></span>
                             <span></span>
