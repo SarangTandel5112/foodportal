@@ -1,5 +1,5 @@
 html {
-    height: 120vh;
+    height: 130vh;
   }
   body {
     margin:0;
@@ -188,4 +188,35 @@ html {
 
     .row1,.row2{
         text-align: center;
+    }
+
+    h2{
+      font-size: 3em;
+      letter-spacing: 1px;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      background: url('./imgage2.jpg');
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: text 3.5s linear infinite;
+
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* background: #1A1500; */
+      color: white;
+    }
+
+    @keyframes text {
+      from {
+        background-position: 0% 50%;
+      }
+      to {
+        background-position: 100% 50%;
+      }
     }

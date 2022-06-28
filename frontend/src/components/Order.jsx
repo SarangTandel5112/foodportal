@@ -72,12 +72,12 @@ function Order() {
                         <input type="text" name="name" required="" value={data.name} onChange={handelChange} />
                         <label>Foodie's Name :</label>
                     </div>
-                    {/* <div class="user-box">
-                        <input type="radio" name="name" required="" onChange={handelChange} />
-                        <label>Yes</label>
-                        <input type="radio" name="name" required="" onChange={handelChange} />
+                    <div class="user-box">
+                        <input type="radio" name="food" required="" onChange={handelChange} />
+                        {/* <label>Yes</label> */}
+                        <input type="radio" name="food" required="" onChange={handelChange} />
                         <label>Want Food On Table ? </label>
-                    </div> */}
+                    </div>
                     {/* <div class="user-box">
                         <input type="password" name="" required="" />
                         <label>Password</label>
