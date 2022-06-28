@@ -7,9 +7,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 function Table() {
 
     const [data, setdata] = useState([])
-
+    let s = 1;
     async function fetchData() {
-        const res = await axios.post()
+        const res = await axios.get("/api/foodorder/getallactiveorders")
+        setdata(res.data.data)
     }
 
     useEffect(() => {
@@ -21,12 +22,17 @@ function Table() {
         // alert(event.target.value)
         if (event.target.value == "allorder") {
             const res = await axios.get("/api/foodorder/getallactiveorders")
+            setdata(res.data.data)
         }
         else if (event.target.value == "tableorder") {
             const res = await axios.get("/api/foodorder/getactivetableorder")
+            setdata(res.data.data)
+
         }
         else if (event.target.value == "stallorder") {
             const res = await axios.get("/api/foodorder/getactiveshoporders")
+            setdata(res.data.data)
+
         }
     }
 
@@ -58,19 +64,22 @@ function Table() {
                             {/* <td><button className="btn btn-primary" onClick={() => window.open(`../../Photos/Files/sresume/${one.stddetails.resumename}`)} >View Resume</button></td> */}
                             {/* <td>{one.placementstatus ? <Selectedbtn /> : <Selectbtn id={one.stddetails._id} changestatus={setselectstatus} />}</td> */}
                         </tr>
-                        {/* {compdata.map((one) => (
+                        {data.map((one) => (
 
                             <tr>
                                 <th scope="row">{s++}</th>
-                                <td>{one.stddetails.name}</td>
-                                <td>{one.stddetails.email.emailId}</td>
-                                <td>{one.stddetails.cgpa}</td>
-                                <td><button className="btn btn-primary" onClick={() => window.open(`../../Photos/Files/sresume/${one.stddetails.resumename}`)} >View Resume</button></td>
-                                <td>{one.placementstatus ? <Selectedbtn /> : <Selectbtn id={one.stddetails._id} changestatus={setselectstatus} />}</td>
+                                <td>{one.name}</td>
+                                <td>{one.email}</td>
+                                <td>{one.item}</td>
+                                <td>{one.table}</td>
+                                <td>{one.tableNo}</td>
+                                <td>{one.completed}</td>
+                                {/* <td><button className="btn btn-primary" onClick={() => window.open(`../../Photos/Files/sresume/${one.stddetails.resumename}`)} >View Resume</button></td> */}
+                                {/* <td>{one.placementstatus ? <Selectedbtn /> : <Selectbtn id={one.stddetails._id} changestatus={setselectstatus} />}</td> */}
                             </tr>
 
                         ))
-                        } */}
+                        }
 
 
 
