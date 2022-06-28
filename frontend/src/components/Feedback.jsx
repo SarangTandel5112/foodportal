@@ -15,12 +15,13 @@ function Feedback() {
 
     function handelChange(event) {
         // alert(event.currentTarget.value)
-        event.preventDefault()
+        // event.preventDefault()
         // event.currentTarget.name.checked = "true";
         // alert(event.target.value);
         setdata({ ...data, [event.currentTarget.name]: event.currentTarget.value })
     }
-    async function submitData() {
+    async function submitData(event) {
+        event.preventDefault()
         // console.log(data);
         // const res = await axios.post("/api/foodorder", data)
         // console.log(res);
@@ -66,7 +67,7 @@ function Feedback() {
                     <div class="wrapper">
                         <input type="radio" name="rate" value="1" id="star-1" onChange={handelChange} />
                         <input type="radio" name="rate" value="2" id="star-2" onChange={handelChange} />
-                        <input type="radio" name="rate" value="3" id="star-3" onChange={handelChange} />
+                        <input type="radio" name="rate" value="3" id="star-3" onChange={handelChange} defaultChecked />
                         <input type="radio" name="rate" value="4" id="star-4" onChange={handelChange} />
                         <input type="radio" name="rate" value="5" id="star-5" onChange={handelChange} />
                         <div class="content">
