@@ -125,7 +125,7 @@ function Order() {
                         <label>Password</label>
                     </div> */}
                     <div className='row1'>
-                        <button className='itembtn' name='item' value="item1" onClick={handelChange}>
+                        <button className='itembtn' name='item' value="Waffer Kurkure Bhel" onClick={handelChange}>
                             <a href="#">
                                 <span></span>
                                 <span></span>
@@ -134,7 +134,7 @@ function Order() {
                                 Waffer Kurkure Bhel
                             </a>
                         </button>
-                        <button className='itembtn' name='item' value="item2" onClick={handelChange}>
+                        <button className='itembtn' name='item' value="Pizza Bhel" onClick={handelChange}>
                             <a href="#">
                                 <span></span>
                                 <span></span>
@@ -146,7 +146,7 @@ function Order() {
                     </div>
                     <br></br>
                     <div className='row2'>
-                        <button className='itembtn' name='item' value="item3" onClick={handelChange}>
+                        <button className='itembtn' name='item' value="Cream onion Bhel" onClick={handelChange}>
                             <a href="#">
                                 <span></span>
                                 <span></span>
@@ -155,7 +155,7 @@ function Order() {
                                 Cream onion Bhel
                             </a>
                         </button>
-                        <button className='itembtn' name='item' value="item4" onClick={handelChange}>
+                        <button className='itembtn' name='item' value="Banana Bhel(Jain)" onClick={handelChange}>
                             <a href="#">
                                 <span></span>
                                 <span></span>
