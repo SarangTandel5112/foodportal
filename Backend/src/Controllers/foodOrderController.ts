@@ -3,6 +3,7 @@ import FoodOrders from "../Model/user";
 class FoodOrder {
 public orderFood = async (req:Request,res:Response)=>{
     const {name , email,item,table,tableNo} =req.body;
+
     if(!name){
         return res.status(200).json({status:false,data:"Please Provide Name"});
     }
@@ -12,21 +13,38 @@ public orderFood = async (req:Request,res:Response)=>{
     if(!email){
         return res.status(200).json({status:false,data:"Please Provide Email"});
     }
+    
     if(!table){
+       
+        return res.status(200).json({status:false,data:"Please Provide Table Selection"});
+    }
+
+    if(table === 'yes'){
         if(!tableNo){
-            return res.status(200).json({status:false,data:"Please Provide Table No."})
+            return res.status(200).json({status:false,data:"Please Provide Table No"});
         }
-        return res.status(200).json({status:false,data:"Please Provide Table"});
     }
     
-    const order = new FoodOrders({
-        name:name,
-        item:item,
-        email:email,
-        table:table,
-        tableNo:tableNo
-    })
-    await order.save();
+    if(tableNo){
+        const order = new FoodOrders({
+            name:name,
+            item:item,
+            email:email,
+            table:table,
+            tableNo:tableNo
+        })
+        await order.save();
+    }else{
+        const order = new FoodOrders({
+            name:name,
+            item:item,
+            email:email,
+            table:table,
+        })
+        await order.save();
+    }
+    
+    
     return res.status(201).json({status:true,data:'Your Order has been placed successfully'})
 
     
