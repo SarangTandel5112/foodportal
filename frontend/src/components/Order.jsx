@@ -106,9 +106,9 @@ function Order() {
                     </div>
                     <div class="user-box1">
                         <label className='labelname'>Want Food On Table ? </label>
-                        <br></br>
+                        {/* <br></br> */}
                         <input type="radio" className='foodtable' id='yesfood' value="yes" name="table" onChange={handleRadiobtn} />
-                        <label className='label1 foodtable' htmlFor="yesfood" >Yes</label>
+                        <label className='label1 foodtable yeslabel' htmlFor="yesfood" >Yes</label>
                         <input type="radio" className='foodtable' id='nofood' value="no" name="table" required="" onChange={handleRadiobtn} />
                         <label className='label1 foodtable' htmlFor="nofood">No</label>
                     </div>
