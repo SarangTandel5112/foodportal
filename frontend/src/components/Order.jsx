@@ -70,6 +70,7 @@ function Order() {
         // submitBtn.focus = false;
         setdata({
             name: "",
+            email: "",
             item: "",
             table: "",
             tableNo: ""
@@ -98,6 +99,10 @@ function Order() {
                     <div class="user-box">
                         <input type="text" name="name" required="" value={data.name} onChange={handelChange} />
                         <label>Foodie's Name :</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="text" name="email" required="" value={data.email} onChange={handelChange} />
+                        <label>Foodie's Email :</label>
                     </div>
                     <div class="user-box1">
                         <label>Want Food On Table ? </label>
