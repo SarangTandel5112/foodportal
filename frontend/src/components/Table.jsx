@@ -22,15 +22,20 @@ function Table() {
         if (event.target.value == "allorder") {
             const res = await axios.get("/api/foodorder/getallactiveorders")
             setdata(res.data.data)
+            console.log(res.data.data)
         }
         else if (event.target.value == "tableorder") {
-            const res = await axios.get("/api/foodorder/getactivetableorder")
+            const res = await axios.get("/api/foodorder/getactivetableorders")
             setdata(res.data.data)
+            console.log(res.data.data)
+
 
         }
         else if (event.target.value == "stallorder") {
             const res = await axios.get("/api/foodorder/getactiveshoporders")
             setdata(res.data.data)
+            console.log(res.data.data)
+
 
         }
     }
@@ -55,14 +60,7 @@ function Table() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>jhgcfb</td>
-                            <td>hgdsv</td>
-                            <td>jgvbsc vhjcxbn</td>
-                            {/* <td><button className="btn btn-primary" onClick={() => window.open(`../../Photos/Files/sresume/${one.stddetails.resumename}`)} >View Resume</button></td> */}
-                            {/* <td>{one.placementstatus ? <Selectedbtn /> : <Selectbtn id={one.stddetails._id} changestatus={setselectstatus} />}</td> */}
-                        </tr>
+                       
                         {data.map((one) => (
 
                             <tr>
@@ -70,9 +68,9 @@ function Table() {
                                 <td>{one.name}</td>
                                 <td>{one.email}</td>
                                 <td>{one.item}</td>
-                                <td>{one.table}</td>
+                                <td>{one.table.toString()}</td>
                                 <td>{one.tableNo}</td>
-                                <td>{one.completed}</td>
+                                <td>{one.completed.toString()}</td>
                                 {/* <td><button className="btn btn-primary" onClick={() => window.open(`../../Photos/Files/sresume/${one.stddetails.resumename}`)} >View Resume</button></td> */}
                                 {/* <td>{one.placementstatus ? <Selectedbtn /> : <Selectbtn id={one.stddetails._id} changestatus={setselectstatus} />}</td> */}
                             </tr>

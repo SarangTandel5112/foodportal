@@ -12,6 +12,17 @@ class FoodOrderRoutes {
     this.router
       .route("/")
       .post(food.orderFood);
+    this.router
+      .route("/getactivetableorders")
+      .get(food.getActiveordersOnTable);
+      this.router
+      .route("/getallactiveorders")
+      .get(food.getAllActiveOrders);
+      this.router
+      .route("/getactiveshoporders")
+      .get(food.getActiveordersOnShop);
+
+      
   }
 }
 export default FoodOrderRoutes;

@@ -56,10 +56,21 @@ public comepleteOrder = async (req:Request , res:Response) =>{
     return res.status(200).json({status:true,data:"Order Completed Successfully"});
 };
 
-public getActiveorders = async (req:Request , res:Response)=>{
+public getActiveordersOnTable = async (req:Request , res:Response)=>{
+    const orders = await FoodOrders.find({completed:false , table:true});
+    return res.status(200).json({status:true,data:orders})
+}
+
+public getActiveordersOnShop = async (req:Request , res:Response)=>{
+    const orders = await FoodOrders.find({completed:false , table:false});
+    return res.status(200).json({status:true,data:orders})
+}
+public getAllActiveOrders = async(req:Request,res:Response)=>{
     const orders = await FoodOrders.find({completed:false});
     return res.status(200).json({status:true,data:orders})
 }
+
+
 
 
    
