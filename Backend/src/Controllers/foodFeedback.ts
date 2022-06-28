@@ -4,10 +4,10 @@ class FoodFeedback {
     public collectFeedback = async (req: Request, res: Response) => {
         const { name, rate, feedback } = req.body;
         if (!name) {
-            return res.status(422).json({ status: false, data: "Please provide name" })
+            return res.status(200).json({ status: false, data: "Please provide name" })
         }
         if (!rate) {
-            return res.status(422).json({ status: false, data: "Please provide rating" })
+            return res.status(200).json({ status: false, data: "Please provide rating" })
         }
         const feedbackobj: any = new Feedback({
             name: name,
