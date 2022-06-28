@@ -23,10 +23,31 @@ function Feedback() {
     }
     async function submitData(event) {
         event.preventDefault()
-        // console.log(data);
-        // const res = await axios.post("/api/foodorder", data)
-        // console.log(res);
-        console.log(data);
+        const res = await axios.post("/api/feedback", data);
+        if (res.status === 201) {
+            toast.success(`${res.data.data}`, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+
+        } else {
+            toast.error(`${res.data.data}`, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+
+        }
+        
         setdata({
             name: "",
             feedback: "",
