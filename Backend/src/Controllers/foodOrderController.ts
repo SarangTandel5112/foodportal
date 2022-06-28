@@ -4,10 +4,10 @@ class FoodOrder {
 public orderFood = async (req:Request,res:Response)=>{
     const {name , item} =req.body;
     if(!name){
-        return res.status(422).json({status:false,data:"Please provide name"})
+        return res.status(200).json({status:false,data:"Please Provide Name"});
     }
     if(!item){
-        return res.status(422).json({status:false,data:"Please provide item"})
+        return res.status(200).json({status:false,data:"Please Provide Item"});
     }
     const order = new FoodOrders({
         name:name,

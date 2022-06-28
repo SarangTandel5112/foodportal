@@ -18,23 +18,38 @@ function Order() {
         setdata({ ...data, [event.currentTarget.name]: event.currentTarget.value })
     }
     async function submitData() {
-        console.log(data);
         const res = await axios.post("/api/foodorder", data)
-        console.log(res);
+       
+        
+        if(res.status === 201){
+            toast.success(`${res.data.data}`, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+
+        }else{
+            toast.error(`${res.data.data}`, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+
+        }
         setdata({
             name: "",
             item: ""
         })
-        if(res.status)
-        toast.success(`Order Placed Successfully`, {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
+        
+       
     }
 
     return (
