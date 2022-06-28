@@ -369,3 +369,18 @@ html {
       animation-delay: .75s
     }
 
+
+
+
+    .stdtable{
+      background-color: white;
+      color: black;
+      width: 100%;
+    }
+
+
+    .maintablediv{
+      width: 100%;
+    }
+
+
