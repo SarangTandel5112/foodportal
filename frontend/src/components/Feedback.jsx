@@ -29,7 +29,7 @@ function Feedback() {
         setdata({
             name: "",
             feedback: "",
-            rate: "5"
+            rate: "3"
         })
 
     }
@@ -77,7 +77,7 @@ function Feedback() {
                                     <li><img src="../../emoji-2.png" alt="" /></li>
                                     <li><img src="../../emoji-3.png" alt="" /></li>
                                     <li><img src="../../emoji-4.png" alt="" /></li>
-                                    <li><img src="../../emoji-5.png" alt="" /></li>
+                                    <li><img src="../../emoji-6.png" alt="" /></li>
                                 </div>
                             </div>
                             <div class="stars">
