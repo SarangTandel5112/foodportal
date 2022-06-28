@@ -61,6 +61,60 @@ html {
     color: #03e9f4;
     font-size: 12px;
   }
+
+
+
+
+
+
+
+
+
+
+  .login-box .user-box1 {
+    position: relative;
+  }
+  
+  .login-box .user-box1 input {
+    /* width: 50%; */
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box1 label {
+    /* position: absolute; */
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login-box .user-box1 label,
+  .login-box .user-box1 label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+
+
+  .foodtable{
+    margin-right: 15px;
+  }
+
+
+
+
+  
+  
   
   .login-box form a {
     position: relative;

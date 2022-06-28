@@ -17,6 +17,12 @@ function Order() {
         // alert(event.target.value);
         setdata({ ...data, [event.currentTarget.name]: event.currentTarget.value })
     }
+
+    function handleRadiobtn(event) {
+        setdata({ ...data, [event.currentTarget.name]: event.currentTarget.value });
+
+    }
+
     async function submitData() {
         const res = await axios.post("/api/foodorder", data)
 
@@ -72,11 +78,17 @@ function Order() {
                         <input type="text" name="name" required="" value={data.name} onChange={handelChange} />
                         <label>Foodie's Name :</label>
                     </div>
-                    <div class="user-box">
-                        <input type="radio" name="food" required="" onChange={handelChange} />
-                        {/* <label>Yes</label> */}
-                        <input type="radio" name="food" required="" onChange={handelChange} />
+                    <div class="user-box1">
                         <label>Want Food On Table ? </label>
+                        <br></br>
+                        <input type="radio" className='foodtable' id='yesfood' name="food" onChange={handleRadiobtn} />
+                        <label className='label1 foodtable' htmlFor="yesfood" >Yes</label>
+                        <input type="radio" className='foodtable  foodtable' id='nofood' name="food" required="" onChange={handleRadiobtn} />
+                        <label className='label1' htmlFor="nofood">No</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="text" name="tableno" required="" onChange={handelChange} />
+                        <label>Foodie's Name :</label>
                     </div>
                     {/* <div class="user-box">
                         <input type="password" name="" required="" />
