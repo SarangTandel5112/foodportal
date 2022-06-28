@@ -28,9 +28,9 @@ body {
   text-align: center;
 }
 
-.login-box .user-box {
+/* .login-box .user-box {
   position: relative;
-}
+} */
 
 .login-box .user-box input {
   width: 100%;

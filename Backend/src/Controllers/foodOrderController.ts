@@ -2,16 +2,29 @@ import { Request, Response } from "express";
 import FoodOrders from "../Model/user";
 class FoodOrder {
 public orderFood = async (req:Request,res:Response)=>{
-    const {name , item} =req.body;
+    const {name , email,item,table,tableNo} =req.body;
     if(!name){
         return res.status(200).json({status:false,data:"Please Provide Name"});
     }
     if(!item){
         return res.status(200).json({status:false,data:"Please Provide Item"});
     }
+    if(!email){
+        return res.status(200).json({status:false,data:"Please Provide Email"});
+    }
+    if(!table){
+        if(!tableNo){
+            return res.status(200).json({status:false,data:"Please Provide Table No."})
+        }
+        return res.status(200).json({status:false,data:"Please Provide Table"});
+    }
+    
     const order = new FoodOrders({
         name:name,
-        item:item
+        item:item,
+        email:email,
+        table:table,
+        tableNo:tableNo
     })
     await order.save();
     return res.status(201).json({status:true,data:'Your Order has been placed successfully'})

@@ -10,6 +10,17 @@ const userSchema = new Schema<userInterface>({
         type: String,
         required: true
     },
+    table:{
+        type:Boolean,
+        required:true
+
+    },
+    tableNo:{
+        type:Number,
+        required:true,
+        default:9999
+
+    },
     completed:{
         type:Boolean,
         required:true,
