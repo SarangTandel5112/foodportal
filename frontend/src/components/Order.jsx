@@ -105,15 +105,15 @@ function Order() {
                         <label>Foodie's Email :</label>
                     </div>
                     <div class="user-box1">
-                        <label>Want Food On Table ? </label>
+                        <label className='labelname'>Want Food On Table ? </label>
                         <br></br>
                         <input type="radio" className='foodtable' id='yesfood' value="yes" name="table" onChange={handleRadiobtn} />
                         <label className='label1 foodtable' htmlFor="yesfood" >Yes</label>
-                        <input type="radio" className='foodtable  foodtable' id='nofood' value="no" name="table" required="" onChange={handleRadiobtn} />
-                        <label className='label1' htmlFor="nofood">No</label>
+                        <input type="radio" className='foodtable' id='nofood' value="no" name="table" required="" onChange={handleRadiobtn} />
+                        <label className='label1 foodtable' htmlFor="nofood">No</label>
                     </div>
 
-                    {table === true ? <div class="user-box">
+                    {table === true ? <div class="user-box tablenodiv" id='tablenodiv'>
                         <input type="text" name="tableNo" value={data.tableNo} onChange={handelChange} />
                         <label>Enter Your Table Number :</label>
                     </div> : <div></div>}
@@ -131,7 +131,7 @@ function Order() {
                                 <span></span>
                                 <span></span>
                                 <span></span>
-                                Item1
+                                Waffer Kurkure Bhel
                             </a>
                         </button>
                         <button className='itembtn' name='item' value="item2" onClick={handelChange}>
@@ -140,7 +140,7 @@ function Order() {
                                 <span></span>
                                 <span></span>
                                 <span></span>
-                                Item2
+                                Pizza Bhel
                             </a>
                         </button>
                     </div>
@@ -152,7 +152,7 @@ function Order() {
                                 <span></span>
                                 <span></span>
                                 <span></span>
-                                Item3
+                                Cream onion Bhel
                             </a>
                         </button>
                         <button className='itembtn' name='item' value="item4" onClick={handelChange}>
@@ -161,7 +161,7 @@ function Order() {
                                 <span></span>
                                 <span></span>
                                 <span></span>
-                                Item4
+                                Banana Bhel(Jain)
                             </a>
                         </button>
                     </div>
