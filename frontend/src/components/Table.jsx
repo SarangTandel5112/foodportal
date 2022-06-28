@@ -20,13 +20,13 @@ function Table() {
     async function handleClick(event) {
         // alert(event.target.value)
         if (event.target.value == "allorder") {
-            const res = await axios.post()
+            const res = await axios.get("/api/foodorder/getallactiveorders")
         }
         else if (event.target.value == "tableorder") {
-            const res = await axios.post()
+            const res = await axios.get("/api/foodorder/getactivetableorder")
         }
         else if (event.target.value == "stallorder") {
-            const res = await axios.post()
+            const res = await axios.get("/api/foodorder/getactiveshoporders")
         }
     }
 
