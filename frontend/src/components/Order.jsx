@@ -34,32 +34,32 @@ function Order() {
     }
 
     async function submitData(event) {
-        // const res = await axios.post("/api/foodorder", data)
+        const res = await axios.post("/api/foodorder", data)
         console.log(data);
 
-        // if (res.status === 201) {
-        //     toast.success(`${res.data.data}`, {
-        //         position: "top-center",
-        //         autoClose: 3000,
-        //         hideProgressBar: false,
-        //         closeOnClick: true,
-        //         pauseOnHover: true,
-        //         draggable: true,
-        //         progress: undefined,
-        //     });
+        if (res.status === 201) {
+            toast.success(`${res.data.data}`, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
 
-        // } else {
-        //     toast.error(`${res.data.data}`, {
-        //         position: "top-center",
-        //         autoClose: 3000,
-        //         hideProgressBar: false,
-        //         closeOnClick: true,
-        //         pauseOnHover: true,
-        //         draggable: true,
-        //         progress: undefined,
-        //     });
+        } else {
+            toast.error(`${res.data.data}`, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
 
-        // }
+        }
         settable(false)
         var yesradioButton = document.getElementById('yesfood')
         var noradioButton = document.getElementById('nofood')
