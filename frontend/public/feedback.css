@@ -150,8 +150,6 @@ input[type="radio"]{
   display: none;
 }
 
-
-
-/* .login-box{
-  margin: 6% 0%;
-} */
+.login-box{
+  margin-top: 6%;
+}
