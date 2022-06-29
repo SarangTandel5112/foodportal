@@ -1,20 +1,22 @@
 import axios from 'axios';
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { Selectedbtn } from "./Selectedbtn";
+import { Selectbtn } from "./Selectbtn";
 import './table.css'
 
 function Table() {
 
     const [data, setdata] = useState([])
+    const [selectstatus, setselectstatus] = useState(false)
     let s = 1;
     async function fetchData() {
         const res = await axios.get("/api/foodorder/getallactiveorders")
         setdata(res.data.data)
     }
-
     useEffect(() => {
         fetchData()
-    }, [])
+    }, [selectstatus])
 
 
     async function handleClick(event) {
@@ -43,7 +45,7 @@ function Table() {
     return (
         <div className='maintablediv container'>
             <div className="stdtable">
-                <div className='btndiv'> 
+                <div className='btndiv'>
                     <button className='btn btn-lg btn-primary tablebtn' value="allorder" onClick={handleClick}>All Order</button>
                     <button className='btn btn-lg btn-primary tablebtn' value="tableorder" onClick={handleClick}>Table Order</button>
                     <button className='btn btn-lg btn-primary tablebtn' value="stallorder" onClick={handleClick}>Stall Order</button>
@@ -71,9 +73,8 @@ function Table() {
                                 <td>{one.item}</td>
                                 <td>{one.table}</td>
                                 <td>{one.tableNo}</td>
-                                <td>{one.completed}</td>
-                                {/* <td><button className="btn btn-primary" onClick={() => window.open(`../../Photos/Files/sresume/${one.stddetails.resumename}`)} >View Resume</button></td> */}
-                                {/* <td>{one.placementstatus ? <Selectedbtn /> : <Selectbtn id={one.stddetails._id} changestatus={setselectstatus} />}</td> */}
+                                {/* <td>{one.completed.toString()}</td> */}
+                                <td>{one.completed ? <Selectedbtn /> : <Selectbtn id={one._id} changestatus={setselectstatus} />}</td>
                             </tr>
 
                         ))
