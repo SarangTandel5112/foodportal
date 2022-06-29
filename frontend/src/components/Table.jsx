@@ -68,9 +68,9 @@ function Table() {
                                 <td>{one.name}</td>
                                 <td>{one.email}</td>
                                 <td>{one.item}</td>
-                                <td>{one.table.toString()}</td>
+                                <td>{one.table}</td>
                                 <td>{one.tableNo}</td>
-                                <td>{one.completed.toString()}</td>
+                                <td>{one.completed}</td>
                                 {/* <td><button className="btn btn-primary" onClick={() => window.open(`../../Photos/Files/sresume/${one.stddetails.resumename}`)} >View Resume</button></td> */}
                                 {/* <td>{one.placementstatus ? <Selectedbtn /> : <Selectbtn id={one.stddetails._id} changestatus={setselectstatus} />}</td> */}
                             </tr>
