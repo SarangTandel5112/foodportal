@@ -94,7 +94,7 @@ function Order() {
                 pauseOnHover
             />
             <div class="login-box">
-                <h2>Welcome Foodies</h2>
+                <h2>Welcome Foodies to The Bhel House</h2>
                 <form>
                     <div class="user-box">
                         <input type="text" name="name" required="" value={data.name} onChange={handelChange} />
