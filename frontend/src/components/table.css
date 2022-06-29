@@ -8,3 +8,12 @@
   .maintablediv{
     width: 100%;
   }
+
+  .tablebtn{
+    /* border: 2px solid red; */
+    margin: 5%;
+  }
+
+  .btndiv{
+    text-align: center;
+  }

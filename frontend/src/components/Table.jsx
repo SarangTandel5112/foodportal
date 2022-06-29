@@ -43,10 +43,11 @@ function Table() {
     return (
         <div className='maintablediv container'>
             <div className="stdtable">
-                <button className='btn btn-lg btn-primary' value="allorder" onClick={handleClick}>All Order</button>
-                <button className='btn btn-lg btn-primary' value="tableorder" onClick={handleClick}>Table Order</button>
-                <button className='btn btn-lg btn-primary' value="stallorder" onClick={handleClick}>Stall Order</button>
-
+                <div className='btndiv'> 
+                    <button className='btn btn-lg btn-primary tablebtn' value="allorder" onClick={handleClick}>All Order</button>
+                    <button className='btn btn-lg btn-primary tablebtn' value="tableorder" onClick={handleClick}>Table Order</button>
+                    <button className='btn btn-lg btn-primary tablebtn' value="stallorder" onClick={handleClick}>Stall Order</button>
+                </div>
                 <table className="table table-striped ">
                     <thead>
                         <tr>
@@ -60,7 +61,7 @@ function Table() {
                         </tr>
                     </thead>
                     <tbody>
-                       
+
                         {data.map((one) => (
 
                             <tr>
