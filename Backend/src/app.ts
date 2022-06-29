@@ -33,8 +33,8 @@ class App{
 
     }
     private routes(){
-        this.app.use('/api/foodorder',foodRouter);
-        this.app.use('/api/feedback',feedbackRouter)
+        this.app.use('/foodorder',foodRouter);
+        this.app.use('/feedback',feedbackRouter)
 
 
     }
