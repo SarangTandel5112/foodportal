@@ -7,7 +7,6 @@ const foodRouter = new FoodOrderRoutes().router;
 const feedbackRouter = new FeedBackRouter().router;
 new connection();
 
-
 class App{
     private app:express.Application;
     constructor(){
