@@ -13,6 +13,7 @@ function Table() {
     async function fetchData() {
         const res = await axios.get("/api/foodorder/getallactiveorders")
         setdata(res.data.data)
+        setselectstatus(false)
     }
     useEffect(() => {
         fetchData()

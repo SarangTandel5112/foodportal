@@ -1,13 +1,14 @@
 import axios from 'axios';
 import React from 'react';
 import { useParams } from 'react-router-dom';
-// axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true;
 
 export const Selectbtn = (props) => {
 
-  function changeOrderStatus(event) {
+  async function changeOrderStatus(event) {
     // alert(event.target.value)
-    props.changeOrderStatus(true)
+    let res = await axios.post("/api/foodorder/placeorder", { id: event.target.value })
+    props.changestatus(true)
   }
 
   // const { onecomp } = useParams();
