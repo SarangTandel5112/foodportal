@@ -7,11 +7,11 @@
 }
 
 .wrapper{
-  background: #f6f6f6;
+  background:transparent;
   max-width: 360px;
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
 }
 .wrapper .content{
   padding: 30px;
@@ -93,11 +93,19 @@
 #star-5:checked ~ .content .stars .star-3,
 #star-5:checked ~ .content .stars .star-4,
 #star-5:checked ~ .content .stars .star-5{
-  color: #fd4;
+  color: hsl(54, 100%, 50%);
+  /* font-size: 150px !important; */
+  cursor: pointer;
+  text-shadow: 0 0 15px hsl(54, 100%, 50%),
+  0 0 30px hsl(54, 100%, 50%),
+  0 0 45px hsl(54, 100%, 50%),
+  0 0 60px hsl(54, 100%, 50%);
+  /* background: transparent;   */
+  /* box-shadow: 0 0 5px #ffc400, 0 0 25px #ffc400, 0 0 50px #ffc400 */
 }
 .wrapper .footer{
   border-top: 1px solid #ccc;
-  background: #f2f2f2;
+  background: transparent;
   width: 100%;
   height: 55px;
   padding: 0 20px;
@@ -112,59 +120,59 @@
 }
 .footer .text::before{
   content: "Rate your experience";
-  color: black;
+  color: #03e9f4;
 }
 .footer .numb::before{
   content: "0 out of 5";
-  color: black;
+  color: #03e9f4;
 }
 #star-1:checked ~ .footer .text::before{
   content: "I just hate it";
-  color: black;
+  color: #03e9f4;
 }
 #star-1:checked ~ .footer .numb::before{
   content: "1 out of 5";
-  color: black;
+  color: #03e9f4;
 
 }
 #star-2:checked ~ .footer .text::before{
   content: "I don't like it";
-  color: black;
+  color: #03e9f4;
 
 }
 #star-2:checked ~ .footer .numb::before{
   content: "2 out of 5";
-  color: black;
+  color: #03e9f4;
 
 }
 #star-3:checked ~ .footer .text::before{
   content: "This is awesome";
-  color: black;
+  color: #03e9f4;
 
 }
 #star-3:checked ~ .footer .numb::before{
   content: "3 out of 5";
-  color: black;
+  color: #03e9f4;
 
 }
 #star-4:checked ~ .footer .text::before{
   content: "I just like it";
-  color: black;
+  color: #03e9f4;
 
 }
 #star-4:checked ~ .footer .numb::before{
   content: "4 out of 5";
-  color: black;
+  color: #03e9f4;
 
 }
 #star-5:checked ~ .footer .text::before{
   content: "I just love it";
-  color: black;
+  color: #03e9f4;
 
 }
 #star-5:checked ~ .footer .numb::before{
   content: "5 out of 5";
-  color: black;
+  color: #03e9f4;
 
 }
 .maindiv input[type="radio"]{
@@ -175,4 +183,10 @@
 
 .login-box{
   margin: 6% 0%;
+}
+
+
+.feedbackemoji{
+  display: flex;
+  justify-content: center;
 }
