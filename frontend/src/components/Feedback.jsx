@@ -64,34 +64,41 @@ function Feedback() {
                         <input type="password" name="" required="" />
                         <label>Password</label>
                     </div> */}
-
-                    <div class="wrapper">
-                        <input type="radio" name="rate" value="1" id="star-1" onChange={handelChange} />
-                        <input type="radio" name="rate" value="2" id="star-2" onChange={handelChange} />
-                        <input type="radio" name="rate" value="3" id="star-3" onChange={handelChange} defaultChecked />
-                        <input type="radio" name="rate" value="4" id="star-4" onChange={handelChange} />
-                        <input type="radio" name="rate" value="5" id="star-5" onChange={handelChange} />
-                        <div class="content">
-                            <div class="outer">
-                                <div class="emojis">
-                                    <li class="slideImg"><img src="../../emoji-1.png" alt="" /></li>
-                                    <li><img src="../../emoji-2.png" alt="" /></li>
-                                    <li><img src="../../emoji-3.png" alt="" /></li>
-                                    <li><img src="../../emoji-4.png" alt="" /></li>
-                                    <li><img src="../../emoji-6.png" alt="" /></li>
+                    <div className='feedbackemoji'>
+                        <div class="wrapper " id='feedbackemoji'>
+                            {/* <a href="#">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span> */}
+                            <input type="radio" name="rate" value="1" id="star-1" onChange={handelChange} />
+                            <input type="radio" name="rate" value="2" id="star-2" onChange={handelChange} />
+                            <input type="radio" name="rate" value="3" id="star-3" onChange={handelChange} defaultChecked />
+                            <input type="radio" name="rate" value="4" id="star-4" onChange={handelChange} />
+                            <input type="radio" name="rate" value="5" id="star-5" onChange={handelChange} />
+                            <div class="content">
+                                <div class="outer">
+                                    <div class="emojis">
+                                        <li class="slideImg"><img src="../../emoji-1.png" alt="" /></li>
+                                        <li><img src="../../emoji-2.png" alt="" /></li>
+                                        <li><img src="../../emoji-3.png" alt="" /></li>
+                                        <li><img src="../../emoji-4.png" alt="" /></li>
+                                        <li><img src="../../emoji-6.png" alt="" /></li>
+                                    </div>
+                                </div>
+                                <div class="stars">
+                                    <label htmlFor="star-1" class="star-1 fas fa-star"></label>
+                                    <label htmlFor="star-2" class="star-2 fas fa-star"></label>
+                                    <label htmlFor="star-3" class="star-3 fas fa-star"></label>
+                                    <label htmlFor="star-4" class="star-4 fas fa-star"></label>
+                                    <label htmlFor="star-5" class="star-5 fas fa-star"></label>
                                 </div>
                             </div>
-                            <div class="stars">
-                                <label htmlFor="star-1" class="star-1 fas fa-star"></label>
-                                <label htmlFor="star-2" class="star-2 fas fa-star"></label>
-                                <label htmlFor="star-3" class="star-3 fas fa-star"></label>
-                                <label htmlFor="star-4" class="star-4 fas fa-star"></label>
-                                <label htmlFor="star-5" class="star-5 fas fa-star"></label>
+                            <div class="footer">
+                                <span class="text"></span>
+                                <span class="numb"></span>
                             </div>
-                        </div>
-                        <div class="footer">
-                            <span class="text"></span>
-                            <span class="numb"></span>
+                            {/* </a> */}
                         </div>
                     </div>
                     <div className='submitbtn' onClick={submitData}>

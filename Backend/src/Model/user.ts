@@ -13,7 +13,6 @@ const userSchema = new Schema<userInterface>({
     table:{
         type:Boolean,
         required:true
-
     },
     tableNo:{
         type:Number,

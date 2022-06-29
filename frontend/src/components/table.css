@@ -2,9 +2,19 @@
     background-color: white;
     color: black;
     width: 100%;
+    border-radius: 10px;
   }
 
 
   .maintablediv{
     width: 100%;
+  }
+
+  .tablebtn{
+    /* border: 2px solid red; */
+    margin: 5%;
+  }
+
+  .btndiv{
+    text-align: center;
   }
