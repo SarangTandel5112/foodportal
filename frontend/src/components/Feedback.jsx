@@ -66,8 +66,8 @@ function Feedback() {
                     </div> */}
                     <div className='feedbackemoji'>
                         <div class="wrapper " id='feedbackemoji'>
-                            {/* <a href="#"> */}
-                            {/* <span></span>
+                            {/* <a href="#">
+                                <span></span>
                                 <span></span>
                                 <span></span>
                                 <span></span> */}

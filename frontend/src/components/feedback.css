@@ -93,8 +93,14 @@
 #star-5:checked ~ .content .stars .star-3,
 #star-5:checked ~ .content .stars .star-4,
 #star-5:checked ~ .content .stars .star-5{
-  color: #fd4;
-  
+  color: hsl(54, 100%, 50%);
+  /* font-size: 150px !important; */
+  cursor: pointer;
+  text-shadow: 0 0 15px hsl(54, 100%, 50%),
+  0 0 30px hsl(54, 100%, 50%),
+  0 0 45px hsl(54, 100%, 50%),
+  0 0 60px hsl(54, 100%, 50%);
+  /* background: transparent;   */
   /* box-shadow: 0 0 5px #ffc400, 0 0 25px #ffc400, 0 0 50px #ffc400 */
 }
 .wrapper .footer{
