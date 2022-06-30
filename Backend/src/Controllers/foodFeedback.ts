@@ -4,16 +4,17 @@ class FoodFeedback {
     public collectFeedback = async (req: Request, res: Response) => {
         const { name, rating, feedback } = req.body;
         if (!name) {
-            return res.status(422).json({ status: false, data: "Please provide name" })
+            return res.status(200).json({ status: false, data: "Please provide name" })
         }
         if (!rating) {
-            return res.status(422).json({ status: false, data: "Please provide rating" })
+            return res.status(200).json({ status: false, data: "Please provide rating" })
         }
-        const feedbackobj: any = new Feedback({
+        const feedbackobj = new Feedback({
             name: name,
             rating: rating,
             feedback: feedback
         });
+        // console.log(feedbackobj)
         await feedbackobj.save();
         return res.status(201).json({ status: false, data: `Thank You ${name}! ,FeedBack Collected Succssfully` })
 
