@@ -7,7 +7,7 @@ class FoodOrder {
         email=email.trim();
 
 
-        if (!name) {
+        if (name.length < 4) {
             return res.status(200).json({ status: false, data: "Please Provide Name" });
         }
         if (!item) {
