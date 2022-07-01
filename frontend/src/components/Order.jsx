@@ -18,7 +18,7 @@ function Order() {
     function handelChange(event) {
         event.preventDefault()
         // alert(event.target.value);
-        setdata({ ...data, [event.currentTarget.name]: event.currentTarget.value })
+        setdata({ ...data, [event.currentTarget.name]: (event.currentTarget.value) })
     }
 
     function handleRadiobtn(event) {
@@ -93,15 +93,18 @@ function Order() {
                 draggable
                 pauseOnHover
             />
-            <div class="login-box">
-                <h2>Welcome Foodies to The Bhel House</h2>
+            <div class="login-box margini-box">
+                <div className='headingmargin'>
+                <h2>Hello Foodies, </h2>
+                <h2>Welcome to The Bhel House</h2>
+                </div>
                 <form>
                     <div class="user-box">
-                        <input type="text" name="name" required="" value={data.name} onChange={handelChange} autoComplete="off" />
+                        <input type="text" name="name" required="" value={data.name} onChange={handelChange} autoComplete="off"/>
                         <label>Foodie's Name :</label>
                     </div>
                     <div class="user-box">
-                        <input type="text" name="email" required="" value={data.email} onChange={handelChange} autoComplete="off" />
+                        <input type="email" name="email" required="" value={data.email} onChange={handelChange} autoComplete="off" />
                         <label>Foodie's Email :</label>
                     </div>
                     <div class="user-box1">
@@ -165,8 +168,8 @@ function Order() {
                             </a>
                         </button>
                     </div>
-                    <div className='submitbtn' id='submitBtn' onClick={submitData}>
-                        <a href="#">
+                    <div className='submitbtn' id='submitBtn' >
+                        <a href="#" onClick={submitData}>
                             <span></span>
                             <span></span>
                             <span></span>

@@ -2,7 +2,10 @@ import { Request, Response } from "express";
 import FoodOrders from "../Model/user";
 class FoodOrder {
     public orderFood = async (req: Request, res: Response) => {
-        const { name, email, item, table, tableNo } = req.body;
+        let { name, email, item, table, tableNo } = req.body;
+        name = name.trim();
+        email=email.trim();
+
 
         if (!name) {
             return res.status(200).json({ status: false, data: "Please Provide Name" });

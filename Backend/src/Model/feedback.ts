@@ -6,6 +6,11 @@ const feedbackSchema = new Schema<feedbackInterface>({
         type:String,
         required:true
     },
+    email: {
+        type: String,
+        required: true,
+        unique:true
+    },
     rating: {
         type: Number,
         required: true
