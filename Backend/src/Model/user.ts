@@ -6,6 +6,10 @@ const userSchema = new Schema<userInterface>({
         type: String,
         required: true
     },
+    email: {
+        type: String,
+        required: true,
+    },
     item: {
         type: String,
         required: true

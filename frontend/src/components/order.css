@@ -18,13 +18,7 @@ body {
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
 }
-@media (min-width: 600px) {
-  .login-box {
-    width: 800px;
-    
-  }
-  
-}
+
 
 #maindiv .login-box {
   top: 60%;
@@ -445,5 +439,16 @@ Link{
 
 
   .headingmargin{
-    margin-top: 5%;
+    margin-top: 56%;
+  }
+  @media (min-width: 600px) {
+    .login-box {
+      width: 800px;
+      
+    }
+  
+    .headingmargin{
+      margin-top: 56%;
+    }
+    
   }
