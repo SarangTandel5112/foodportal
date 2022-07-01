@@ -94,7 +94,10 @@ function Order() {
                 pauseOnHover
             />
             <div class="login-box margini-box">
-                <h2>Welcome Foodies to The Bhel House</h2>
+                <div className='headingmargin'>
+                <h2>Hello Foodies, </h2>
+                <h2>Welcome to The Bhel House</h2>
+                </div>
                 <form>
                     <div class="user-box">
                         <input type="text" name="name" required="" value={data.name} onChange={handelChange} />
