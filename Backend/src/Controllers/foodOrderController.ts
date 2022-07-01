@@ -1,9 +1,14 @@
 import { Request, Response } from "express";
 import FoodOrders from "../Model/user";
+import xlsx from 'xlsx';
 class FoodOrder {
+    constructor(){
+        this.generateExelFile();
+    }
     public orderFood = async (req: Request, res: Response) => {
         let { name, email, item, table, tableNo } = req.body;
         name = name.trim();
+        console.log(name.length)
         email=email.trim();
 
 
@@ -17,35 +22,17 @@ class FoodOrder {
             return res.status(200).json({ status: false, data: "Please Provide Email" });
         }
 
-        if (!table) {
 
-            return res.status(200).json({ status: false, data: "Please Provide Table Selection" });
-        }
+       
 
-        if (table === 'yes') {
-            if (!tableNo) {
-                return res.status(200).json({ status: false, data: "Please Provide Table No" });
-            }
-        }
-
-        if (tableNo) {
+       
             const order = new FoodOrders({
                 name: name,
                 item: item,
                 email: email,
-                table: table,
-                tableNo: tableNo
             })
             await order.save();
-        } else {
-            const order = new FoodOrders({
-                name: name,
-                item: item,
-                email: email,
-                table: table,
-            })
-            await order.save();
-        }
+        
 
 
         return res.status(201).json({ status: true, data: 'Your Order has been placed successfully' })
@@ -86,6 +73,34 @@ class FoodOrder {
         orderdata.completed = true;
         orderdata.save();
         res.status(200).json({ status: true, data: "Status changed successfully" })
+    }
+
+    public generateExelFile = async() => {
+        const completedorders = await FoodOrders.find({completed:true}).select(["-_id","-__v","-createdAt","-updatedAt"]).lean();
+        const allorders = await FoodOrders.find().select(["-_id","-__v","-createdAt","-updatedAt"]).lean();
+        const tableorders = await FoodOrders.find({table:true}).select(["-_id","-__v","-createdAt","-updatedAt"]).lean();
+        const stallOrders = await FoodOrders.find({table:false}).select(["-_id","-__v","-createdAt","-updatedAt"]).lean();
+
+        const wb = xlsx.utils.book_new();
+        const newWs = xlsx.utils.json_to_sheet(completedorders);
+        const newWs2 = xlsx.utils.json_to_sheet(allorders);
+        const newWs3 = xlsx.utils.json_to_sheet(tableorders);
+        const newWs4 = xlsx.utils.json_to_sheet(stallOrders);
+
+
+        xlsx.utils.book_append_sheet(wb,newWs2,"All Orders");
+        xlsx.utils.book_append_sheet(wb,newWs," Completed Orders");
+        xlsx.utils.book_append_sheet(wb,newWs3," Table Orders");
+        xlsx.utils.book_append_sheet(wb,newWs4," Stall Orders");
+
+
+        xlsx.writeFile(wb,"Orders.xlsx");
+
+
+
+
+        
+
     }
 
 

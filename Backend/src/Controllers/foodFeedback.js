@@ -16,9 +16,15 @@ const feedback_1 = __importDefault(require("../Model/feedback"));
 class FoodFeedback {
     constructor() {
         this.collectFeedback = (req, res) => __awaiter(this, void 0, void 0, function* () {
-            const { name, rate, feedback } = req.body;
+            let { name, rate, feedback, email } = req.body;
+            name = name.trim();
+            feedback = feedback.trim();
+            email = email.trim();
             if (!name) {
                 return res.status(200).json({ status: false, data: "Please provide name" });
+            }
+            if (!email) {
+                return res.status(200).json({ status: false, data: "Please provide email" });
             }
             if (!rate) {
                 return res.status(200).json({ status: false, data: "Please provide rating" });
@@ -26,6 +32,7 @@ class FoodFeedback {
             const feedbackobj = new feedback_1.default({
                 name: name,
                 rating: Number(rate),
+                email: email,
                 feedback: feedback
             });
             yield feedbackobj.save();

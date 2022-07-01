@@ -16,7 +16,9 @@ const user_1 = __importDefault(require("../Model/user"));
 class FoodOrder {
     constructor() {
         this.orderFood = (req, res) => __awaiter(this, void 0, void 0, function* () {
-            const { name, email, item, table, tableNo } = req.body;
+            let { name, email, item, table, tableNo } = req.body;
+            name = name.trim();
+            email = email.trim();
             if (!name) {
                 return res.status(200).json({ status: false, data: "Please Provide Name" });
             }
