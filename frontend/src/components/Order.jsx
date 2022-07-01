@@ -104,7 +104,7 @@ function Order() {
                         <label>Foodie's Name :</label>
                     </div>
                     <div class="user-box">
-                        <input type="email" name="email" required="" value={data.email} onChange={handelChange} autoComplete="off" />
+                        <input type="text" name="email" required="" value={data.email} onChange={handelChange} autoComplete="off" />
                         <label>Foodie's Email :</label>
                     </div>
 

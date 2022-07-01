@@ -10,7 +10,7 @@ import "./feedback.css"
 function Feedback() {
     const [data, setdata] = useState({
         name: "",
-        email:"",
+        email: "",
         feedback: "",
         rate: ""
     })
@@ -75,15 +75,15 @@ function Feedback() {
                 <h2>Please Share Your Feedback</h2>
                 <form>
                     <div class="user-box">
-                        <input type="text" name="name" required="" value={data.name} autoComplete="off" onChange={handelChange} />
+                        <input type="text" name="name" required="" value={data.name} onChange={handelChange} autoComplete="off" />
                         <label>Foodie's Name :</label>
                     </div>
                     <div class="user-box">
-                        <input type="email" name="email" required="" value={data.email} autoComplete="off" onChange={handelChange} />
+                        <input type="text" name="email" required="" value={data.email} onChange={handelChange} autoComplete="off" />
                         <label>Foodie's Email :</label>
                     </div>
                     <div class="user-box">
-                        <input type="text" name="feedback" required="" value={data.feedback} autoComplete="off" onChange={handelChange} />
+                        <input type="text" name="feedback" required="" value={data.feedback} onChange={handelChange} autoComplete="off" />
                         <label>Foodie's Feedback :</label>
                     </div>
                     {/* <div class="user-box">
@@ -97,7 +97,7 @@ function Feedback() {
                                 <span></span>
                                 <span></span>
                                 <span></span> */}
-                            <input type="radio" name="rate" value="1" id="star-1" onChange={handelChange}  />
+                            <input type="radio" name="rate" value="1" id="star-1" onChange={handelChange} />
                             <input type="radio" name="rate" value="2" id="star-2" onChange={handelChange} />
                             <input type="radio" name="rate" value="3" id="star-3" onChange={handelChange} defaultChecked />
                             <input type="radio" name="rate" value="4" id="star-4" onChange={handelChange} />
