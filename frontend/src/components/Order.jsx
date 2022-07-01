@@ -95,31 +95,21 @@ function Order() {
             />
             <div class="login-box margini-box">
                 <div className='headingmargin'>
-                <h2>Hello Foodies, </h2>
-                <h2>Welcome to The Bhel House</h2>
+                    <h2>Hello Foodies, </h2>
+                    <h2>Welcome to The Bhel House</h2>
                 </div>
                 <form>
                     <div class="user-box">
-                        <input type="text" name="name" required="" value={data.name} onChange={handelChange} autoComplete="off"/>
+                        <input type="text" name="name" required="" value={data.name} onChange={handelChange} autoComplete="off" />
                         <label>Foodie's Name :</label>
                     </div>
                     <div class="user-box">
                         <input type="email" name="email" required="" value={data.email} onChange={handelChange} autoComplete="off" />
                         <label>Foodie's Email :</label>
                     </div>
-                    <div class="user-box1">
-                        <label className='labelname'>Want Food On Table ? </label>
-                        {/* <br></br> */}
-                        <input type="radio" className='foodtable' id='yesfood' value="yes" name="table" onChange={handleRadiobtn} />
-                        <label className='label1 foodtable yeslabel' htmlFor="yesfood" >Yes</label>
-                        <input type="radio" className='foodtable' id='nofood' value="no" name="table" required="" onChange={handleRadiobtn} />
-                        <label className='label1 foodtable' htmlFor="nofood">No</label>
-                    </div>
 
-                    {table === true ? <div class="user-box tablenodiv" id='tablenodiv'>
-                        <input type="text" name="tableNo" value={data.tableNo} onChange={handelChange} />
-                        <label>Enter Your Table Number :</label>
-                    </div> : <div></div>}
+
+
 
 
 
