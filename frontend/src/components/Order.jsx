@@ -97,11 +97,11 @@ function Order() {
                 <h2>Welcome Foodies to The Bhel House</h2>
                 <form>
                     <div class="user-box">
-                        <input type="text" name="name" required="" value={data.name} onChange={handelChange} />
+                        <input type="text" name="name" required="" value={data.name} onChange={handelChange} autoComplete="off" />
                         <label>Foodie's Name :</label>
                     </div>
                     <div class="user-box">
-                        <input type="text" name="email" required="" value={data.email} onChange={handelChange} />
+                        <input type="text" name="email" required="" value={data.email} onChange={handelChange} autoComplete="off" />
                         <label>Foodie's Email :</label>
                     </div>
                     <div class="user-box1">

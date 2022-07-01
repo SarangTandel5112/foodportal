@@ -428,3 +428,13 @@ Link{
   animation: btn-anim4 1s linear infinite;
   animation-delay: 0.75s;
 } */
+
+
+
+.homebg{
+  background-image: url("../components/the\ bhel\ house.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60% 10%;
+  margin: 0px;
+}
