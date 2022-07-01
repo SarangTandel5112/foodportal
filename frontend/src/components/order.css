@@ -233,7 +233,6 @@ body {
     right: 100%;
   }
 }
-
 .login-box a span:nth-child(4) {
   bottom: -100%;
   left: 0;
@@ -430,3 +429,6 @@ Link{
   animation: btn-anim4 1s linear infinite;
   animation-delay: 0.75s;
 } */
+  .homi-box{
+    margin:0% 0%;
+  }

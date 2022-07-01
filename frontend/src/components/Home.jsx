@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Home() {
     return (
-        <div class="login-box">
+        <div class="login-box homi-box">
             <form>
 
                 <div className='row1'>

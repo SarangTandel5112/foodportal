@@ -34,7 +34,6 @@ function Order() {
     }
 
     async function submitData(event) {
-        alert("helo")
         const res = await axios.post("/api/foodorder", data)
         console.log(data);
 
