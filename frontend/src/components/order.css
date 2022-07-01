@@ -449,7 +449,7 @@ Link{
 
 
   .headingmargin{
-    margin-top: 65%;
+    margin-top: 126%;
   }
   @media (min-width: 600px) {
     .login-box {
@@ -459,6 +459,7 @@ Link{
   
     .headingmargin{
       margin-top: 6%;
+      margin-bottom: 3%;
     }
     
   }
