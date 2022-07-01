@@ -6,8 +6,8 @@ class FoodFeedback {
         name=name.trim();
         feedback=feedback.trim();
         email=email.trim();
-        if (!name) {
-            return res.status(200).json({ status: false, data: "Please provide name" })
+        if (name.length < 4) {
+            return res.status(200).json({ status: false, data: "Please provide valid name" })
         }
         if (!email) {
             return res.status(200).json({ status: false, data: "Please provide email" })
