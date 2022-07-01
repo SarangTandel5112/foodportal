@@ -127,7 +127,7 @@
   color: #03e9f4;
 }
 #star-1:checked ~ .footer .text::before{
-  content: "I just hate it";
+  content: "I just hate it.";
   color: #03e9f4;
 }
 #star-1:checked ~ .footer .numb::before{
@@ -136,7 +136,7 @@
 
 }
 #star-2:checked ~ .footer .text::before{
-  content: "I don't like it";
+  content: "I don't like it.";
   color: #03e9f4;
 
 }
@@ -146,7 +146,7 @@
 
 }
 #star-3:checked ~ .footer .text::before{
-  content: "This is awesome";
+  content: "This is awesome.";
   color: #03e9f4;
 
 }
@@ -156,7 +156,7 @@
 
 }
 #star-4:checked ~ .footer .text::before{
-  content: "I just like it";
+  content: "I just like it.";
   color: #03e9f4;
 
 }
@@ -166,7 +166,7 @@
 
 }
 #star-5:checked ~ .footer .text::before{
-  content: "I just love it";
+  content: "I just love it.";
   color: #03e9f4;
 
 }

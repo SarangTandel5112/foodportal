@@ -18,7 +18,7 @@ function Order() {
     function handelChange(event) {
         event.preventDefault()
         // alert(event.target.value);
-        setdata({ ...data, [event.currentTarget.name]: (event.currentTarget.value).trim() })
+        setdata({ ...data, [event.currentTarget.name]: (event.currentTarget.value) })
     }
 
     function handleRadiobtn(event) {
@@ -100,11 +100,11 @@ function Order() {
                 </div>
                 <form>
                     <div class="user-box">
-                        <input type="text" name="name" required="" value={data.name} onChange={handelChange} />
+                        <input type="text" name="name" required="" value={data.name} onChange={handelChange} autoComplete="off"/>
                         <label>Foodie's Name :</label>
                     </div>
                     <div class="user-box">
-                        <input type="text" name="email" required="" value={data.email} onChange={handelChange} />
+                        <input type="email" name="email" required="" value={data.email} onChange={handelChange} autoComplete="off" />
                         <label>Foodie's Email :</label>
                     </div>
                     <div class="user-box1">
