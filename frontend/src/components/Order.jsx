@@ -18,7 +18,7 @@ function Order() {
     function handelChange(event) {
         event.preventDefault()
         // alert(event.target.value);
-        setdata({ ...data, [event.currentTarget.name]: event.currentTarget.value })
+        setdata({ ...data, [event.currentTarget.name]: (event.currentTarget.value).trim() })
     }
 
     function handleRadiobtn(event) {
@@ -34,6 +34,7 @@ function Order() {
     }
 
     async function submitData(event) {
+        alert("helo")
         const res = await axios.post("/api/foodorder", data)
         console.log(data);
 
@@ -93,7 +94,7 @@ function Order() {
                 draggable
                 pauseOnHover
             />
-            <div class="login-box">
+            <div class="login-box margini-box">
                 <h2>Welcome Foodies to The Bhel House</h2>
                 <form>
                     <div class="user-box">
@@ -165,8 +166,8 @@ function Order() {
                             </a>
                         </button>
                     </div>
-                    <div className='submitbtn' id='submitBtn' onClick={submitData}>
-                        <a href="#">
+                    <div className='submitbtn' id='submitBtn' >
+                        <a href="#" onClick={submitData}>
                             <span></span>
                             <span></span>
                             <span></span>
