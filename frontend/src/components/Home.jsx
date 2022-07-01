@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 
 function Home() {
     return (
-        <div class="login-box homi-box homebg">
+        <div class="login-box homi-box ">
+            <img className='titleimg' src='../../title.png' alt="sarang" />
+            {/* <img src='title.png' /> */}
             <form>
 
                 <div className='row1'>
